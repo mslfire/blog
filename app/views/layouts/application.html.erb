@@ -1,14 +1,43 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Blog</title>
+  <title>The Beginning</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'application', 'http://fonts.googleapis.com/css?family=Raleway:400,700' %>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <%= favicon_link_tag 'favicon.ico' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+	<header id="main_navigation" class="clearfix">
+		<a href="#" class="name">Michael</a>
+		<nav>
+			<%= link_to "Articles", posts_path %>
+		</nav>
+
+
+	</header>
+
+	<% if notice %>
+		<p class="notice"><%= notice %></p>
+	<% elsif alert %>
+		<p class="alert"><%= alert %></p>
+	<% end %>
+
+	<%= yield %>
+
+	<footer id="main_footer">
+		<p class="copyright">&copy;2015 The Beginning</p>
+		<nav>
+			<a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
+			<a href="#" target="_blank"><i class="fa fa-facebook"></i></a>
+			<a href="#" target="_blank"><i class="fa fa-dribbble"></i></a>
+			<a href="#" target="_blank"><i class="fa fa-github"></i></a>
+		</nav>
+	</footer>
+
 
 </body>
 </html>
