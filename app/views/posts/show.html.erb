@@ -4,7 +4,7 @@
 		<p class="date"><%= @post.created_at.strftime('%A, %B %d') %></p>
 	</header>
 	<div class="post_content">	
-		<p class="post_wrapper"><%= @post.content %></p>
+		<%= markdown @post.content %>
 
 	</div>
 	<div class="admin">
