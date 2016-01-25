@@ -1,28 +1,15 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Planning Blog
 
-Things you may want to cover:
+1. building a personal blog - share info
+2. feastures - 
+	- Pages
+	- Posts
+	- Markdown
+	- comments - would like up vote down vote comments
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+	- Create - Edit - Distroy (Pages & Posts)
+	- Login
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
