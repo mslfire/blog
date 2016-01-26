@@ -22,8 +22,9 @@ group :development, :test do
 end
 
 group :development do
-end
 	gem 'sqlite3'
+end
+
 
 group :production do
 	gem 'rails_12factor'
