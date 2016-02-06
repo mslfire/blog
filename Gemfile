@@ -15,6 +15,7 @@ gem 'pygments.rb', '~> 0.6.0'
 gem 'redcarpet', '~> 3.2.2'
 gem 'friendly_id', '~> 5.1'
 gem 'will_paginate', '~> 3.0', '>= 3.0.7'
+gem 'mail_form', '~> 1.5.1'
 
 group :development, :test do
   gem 'byebug'
@@ -25,7 +26,6 @@ end
 group :development do
 	gem 'sqlite3'
 end
-
 
 group :production do
 	gem 'rails_12factor'
