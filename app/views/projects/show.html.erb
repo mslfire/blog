@@ -1,0 +1,21 @@
+<div id="post_show_content" class="wrapper">
+	<header>
+		<h1><%= @project.title %></h1>
+		<p class="date"><%= @project.created_at.strftime('%A, %B %d') %></p>
+	</header>
+	<article class="post_content">	
+		<%= markdown @project.description %>
+
+	</article> 
+	<br>
+	<p class="link">Visit -
+		<a href="<%= @project.link %>" class="project_button" target="_blank"> <%= @project.title %></a>
+	</p>
+	<br>
+	<div class="admin">
+		<%= link_to "Edit Project", edit_project_path(@project) %>
+		<%= link_to "Delete Project", project_path(@project), method: :delete, data: { confirm: "Do you really want to Delete this project?"} %>
+	</div>
+
+</div>
+
