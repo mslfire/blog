@@ -3,23 +3,28 @@
 		<h1><%= @post.title %></h1>
 		<p class="date"><%= @post.created_at.strftime('%A, %B %d') %></p>
 	</header>
-	<article class="post_content">	
+
+	<article class="post_content">
+	
 		<%= markdown @post.content %>
 
 	</article>
+
+	<% if user_signed_in? %>
 	<div class="admin">
 		<%= link_to "Edit Post", edit_post_path(@post) %>
 		<%= link_to "Delete Post", post_path(@post), method: :delete, data: { confirm: "Do you really want to Delete this post?"} %>
 	</div>
+	<% end %>
 
 	<div class="share">
 		<p>Share This</p>
 		<!-- Twitter -->
-    <a onclick="javascript:window.open('http://twitter.com/share?text=<%= @post.title %> by @mleismeister - &amp;url=<%= url_for([@post, {only_path: false}]) %>', '_blank', 'width=800, height=500, top=200, left=300');void(0);"><i class="fa fa-twitter"></i></a>
-    <!-- Facebook -->
-    <a onclick="javascript:window.open('http://www.facebook.com/sharer.php?u=<%= url_for([@post, {only_path: false}]) %>', '_blank', 'width=800, height=500, top=200, left=300');void(0);"><i class="fa fa-facebook"></i></a>
-    <!-- Google Plus -->
-    <a onclick="javascript:window.open('https://plus.google.com/share?url=<%= url_for([@post, {only_path: false}]) %>', '_blank', 'width=800, height=500, top=200, left=300');void(0);"><i class="fa fa-google-plus"></i></a>
+	    <a onclick="javascript:window.open('http://twitter.com/share?text=<%= @post.title %> by @mleismeister - &amp;url=<%= url_for([@post, {only_path: false}]) %>', '_blank', 'width=800, height=500, top=200, left=300');void(0);"><i class="fa fa-twitter"></i></a>
+	    <!-- Facebook -->
+	    <a onclick="javascript:window.open('http://www.facebook.com/sharer.php?u=<%= url_for([@post, {only_path: false}]) %>', '_blank', 'width=800, height=500, top=200, left=300');void(0);"><i class="fa fa-facebook"></i></a>
+	    <!-- Google Plus -->
+	    <a onclick="javascript:window.open('https://plus.google.com/share?url=<%= url_for([@post, {only_path: false}]) %>', '_blank', 'width=800, height=500, top=200, left=300');void(0);"><i class="fa fa-google-plus"></i></a>
 	</div>
 
 	<%= render 'disgus' %>

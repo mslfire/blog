@@ -8,14 +8,18 @@
 
 	</article> 
 	<br>
+
 	<p class="link">Visit -
 		<a href="<%= @project.link %>" class="project_button" target="_blank"> <%= @project.title %></a>
 	</p>
 	<br>
+	
+	<% if user_signed_in? %>
 	<div class="admin">
 		<%= link_to "Edit Project", edit_project_path(@project) %>
 		<%= link_to "Delete Project", project_path(@project), method: :delete, data: { confirm: "Do you really want to Delete this project?"} %>
 	</div>
+	<% end %>
 
 </div>
 
